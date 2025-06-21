@@ -20,7 +20,7 @@ public class ProductController {
 
     @GetMapping("/message")
     public List<ProductEntity> getMessage() {
-        System.out.println(service.getAllProducts());
+//        System.out.println(service.getAllProducts());
         return service.getAllProducts();
     }
     @PostMapping("/message")

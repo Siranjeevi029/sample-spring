@@ -18,12 +18,12 @@ public class ProductService {
     @Autowired
     public ProductService(ProductRepository repository) {
         this.repository = repository;
-        // Optionally, initialize some sample data if the database is empty.
-//        if(repository.count() == 0) {
-//            repository.save(new ProductEntity("cinthol", "$20", "../first/photos/cinthol.jpg"));
-//            repository.save(new ProductEntity("hamam", "$30", "../first/photos/hamam.jpg"));
-//            repository.save(new ProductEntity("dettol", "$100", "../first/photos/dettol.jpg"));
-//        }
+//         Optionally, initialize some sample data if the database is empty.
+        if(repository.count() == 0) {
+            repository.save(new ProductEntity("cinthol", "$20", "../first/photos/cinthol.jpg"));
+            repository.save(new ProductEntity("hamam", "$30", "../first/photos/hamam.jpg"));
+            repository.save(new ProductEntity("dettol", "$100", "../first/photos/dettol.jpg"));
+        }
     }
 
     public List<ProductEntity> getAllProducts() {
