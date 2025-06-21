@@ -1,5 +1,5 @@
 # Use official OpenJDK base image
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:21-jdk
 
 # Set working directory
 WORKDIR /app
@@ -14,4 +14,4 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Run the app
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java", "-jar", "target/demo2-0.0.1-SNAPSHOT.jar"]
