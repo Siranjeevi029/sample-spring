@@ -9,23 +9,23 @@ import jakarta.persistence.Id;
 public class ProductEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
+    private Long priority;
+    private String datetime;
+    private String title;
+    private String body;
 
-    private String productName;
-    private String productPrize;
-    private String productImage;
-
-    // Constructors
-    public ProductEntity() {}
-
-    public ProductEntity(String productName, String productPrize, String productImage) {
-        this.productName = productName;
-        this.productPrize = productPrize;
-        this.productImage = productImage;
+    public ProductEntity(Long id, Long priority, String datetime, String title, String body) {
+        this.id = id;
+        this.priority = priority;
+        this.datetime = datetime;
+        this.title = title;
+        this.body = body;
     }
 
-    // Getters and Setters
+    public ProductEntity() {
+    }
     public Long getId() {
         return id;
     }
@@ -34,27 +34,35 @@ public class ProductEntity {
         this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public Long getPriority() {
+        return priority;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setPriority(Long priority) {
+        this.priority = priority;
     }
 
-    public String getProductPrize() {
-        return productPrize;
+    public String getDatetime() {
+        return datetime;
     }
 
-    public void setProductPrize(String productPrize) {
-        this.productPrize = productPrize;
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
     }
 
-    public String getProductImage() {
-        return productImage;
+    public String getTitle() {
+        return title;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 }

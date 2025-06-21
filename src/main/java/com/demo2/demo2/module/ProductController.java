@@ -13,25 +13,25 @@ public class ProductController {
 
     @Autowired
     private ProductService service;
-    @GetMapping("/greet")
+    @GetMapping("/")
     public String message() {
         return "hello";
     }
 
-    @GetMapping("/message")
+    @GetMapping("/posts")
     public List<ProductEntity> getMessage() {
 //        System.out.println(service.getAllProducts());
         return service.getAllProducts();
     }
-    @PostMapping("/message")
+    @PostMapping("/posts")
     public ProductEntity post(@RequestBody ProductEntity pe){
         return service.createProduct(pe);
     }
-    @DeleteMapping("/message/{id}")
+    @DeleteMapping("/posts/{id}")
     public void delete(@PathVariable Long id){
          service.deleteProduct(id);
     }
-    @PutMapping("/message/{id}")
+    @PutMapping("/posts/{id}")
     public ProductEntity update(@RequestBody ProductEntity product,@PathVariable Long id){
         return service.updateProduct(product,id);
     }
